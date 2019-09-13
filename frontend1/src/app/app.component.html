@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Post New Messages</mat-card-title>
+      </mat-card-header>
+  <form >
+    <mat-form-field >
+      <textarea  name="message" [(ngModel)]="message" class="example-full-width" matInput placeholder="Message Body"></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input name="userName" [(ngModel)]="userName" class="example-full-width" matInput placeholder="Input username" >
+    </mat-form-field>
+  </form>
+  <mat-card-actions>
+    <button (click)="post()" mat-button>POST</button>
+  </mat-card-actions>
+</mat-card>
+<br>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Messages</mat-card-title>
+      </mat-card-header>
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let message of messages">{{message.msg}}</mat-list-item>
+
+  </mat-list>
+</mat-card>
